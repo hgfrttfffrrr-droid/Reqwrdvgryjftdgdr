@@ -19,12 +19,11 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
 
-    # مرحله حیاتی: ساختن فایل تنظیمات با اطلاعات API شما
+    # مرحله ساخت فایل تنظیمات با مقادیر تستی (داخل دابل کوتیشن)
     - name: Create local.properties
       run: |
-        echo "api_id=YOUR_API_ID" > local.properties
-        echo "api_hash=YOUR_API_HASH" >> local.properties
-        # اگر SDK لازم بود، اینجا مسیرش رو ست میکنیم
+        echo "api_id=\"123456\"" > local.properties
+        echo "api_hash=\"0123456789abcdef0123456789abcdef\"" >> local.properties
         echo "sdk.dir=$ANDROID_HOME" >> local.properties
 
     - name: Grant execute permission for gradlew
